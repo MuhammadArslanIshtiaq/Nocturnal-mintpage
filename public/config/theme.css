@@ -1,15 +1,15 @@
 :root {
-  --primary: #fff !important;
+  --primary: #f39c12 !important;
   --primary-text: #fff;
   --secondary: #f5a144;
   --secondary-text: #a5307a;
-  --b-grad: linear-gradient(90deg, rgba(245, 161, 68,1) 20.375%,rgba(244, 160, 68,1) 20.375%,rgba(165, 48, 122,1) 80.375%) 1;
+  --b-grad: linear-gradient(90deg, rgba(245, 161, 68,1) 20.375%,rgba(244, 160, 68,1) 20.375%,rgba(251, 197, 49,1.0) 80.375%) 1;
  
 }
 
 body {
   background-color: #000000;
-  background-image: url("./images/bg.jpeg") !important;  
+  background-image: url("./images/bg.jpg") !important;  
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center ;

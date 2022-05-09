@@ -242,7 +242,7 @@ function Home() {
         mb={"5vh"}
       >
         <s.Mint>
-          <NavLogo alt={"logo"} src={"config/images/logo.png"}></NavLogo>
+          {/* <NavLogo alt={"logo"} src={"config/images/logo.png"}></NavLogo> */}
           <s.TextTitle
             size={3.0}
             style={{

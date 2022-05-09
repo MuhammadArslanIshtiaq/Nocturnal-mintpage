@@ -202,13 +202,23 @@ export const maxButton = styled.button`
     90deg,
     rgba(245, 161, 68, 1) 20.375%,
     rgba(244, 160, 68, 1) 20.375%,
-    rgba(165, 48, 122, 1) 80.375%
+    rgba(251, 197, 49, 1) 80.375%
   );
   height: 50px;
   border-radius: 10px;
   font-family: "acme";
   font-size: 1.5rem;
   color: var(--primary-text) !important ;
+
+  :hover {
+    background: linear-gradient(
+      270deg,
+      rgba(245, 161, 68, 1) 20.375%,
+      rgba(244, 160, 68, 1) 20.375%,
+      rgba(251, 197, 49, 1) 80.375%
+    );
+    border-color: #fff;
+  }
 
   @media screen and (max-width: 768px) {
     position: relative;
