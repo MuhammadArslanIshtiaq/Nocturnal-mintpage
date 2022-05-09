@@ -238,7 +238,7 @@ function Home() {
         jc={"center"}
         ai={"start"}
         fd={"row"}
-        mt={"5vh"}
+        mt={"10vh"}
         mb={"5vh"}
       >
         <s.Mint>
