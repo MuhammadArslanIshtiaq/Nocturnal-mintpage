@@ -4,8 +4,6 @@
 
 # Fleek Web access
 
-https://green-wildflower-3143.on.fleek.co/
-
 ## Installation
 
 1. Clone the Repository

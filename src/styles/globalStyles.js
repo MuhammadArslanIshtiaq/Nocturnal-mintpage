@@ -213,9 +213,9 @@ export const maxButton = styled.button`
   :hover {
     background: linear-gradient(
       270deg,
-      rgba(245, 161, 68, 1) 20.375%,
-      rgba(244, 160, 68, 1) 20.375%,
-      rgba(251, 197, 49, 1) 80.375%
+      rgba(245, 161, 68, 1) 20.37%,
+      rgba(244, 160, 68, 1) 20.37%,
+      rgba(251, 197, 49, 1) 80.37%
     );
     border-color: #fff;
   }
