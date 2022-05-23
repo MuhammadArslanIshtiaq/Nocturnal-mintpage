@@ -1,9 +1,9 @@
 :root {
-  --primary: #f39c12 !important;
+  --primary: #fff !important;
   --primary-text: #fff;
-  --secondary: #f5a144;
+  --secondary: #fff;
   --secondary-text: #a5307a;
-  --b-grad: linear-gradient(90deg, rgba(245, 161, 68,1) 20.375%,rgba(244, 160, 68,1) 20.375%,rgba(251, 197, 49,1.0) 80.375%) 1;
+  --b-grad: linear-gradient(90deg, #fff 20.375%,#dcdde1 80.375%) 1;
  
 }
 

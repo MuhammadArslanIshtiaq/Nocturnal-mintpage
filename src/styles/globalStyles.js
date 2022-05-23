@@ -198,12 +198,7 @@ export const connectButton = styled.button`
 
 export const maxButton = styled.button`
   width: 30%;
-  background: linear-gradient(
-    90deg,
-    rgba(245, 161, 68, 1) 20.375%,
-    rgba(244, 160, 68, 1) 20.375%,
-    rgba(251, 197, 49, 1) 80.375%
-  );
+  background: linear-gradient(180deg, #1e272e, #000);
   height: 50px;
   border-radius: 10px;
   font-family: "acme";
@@ -211,12 +206,7 @@ export const maxButton = styled.button`
   color: var(--primary-text) !important ;
 
   :hover {
-    background: linear-gradient(
-      270deg,
-      rgba(245, 161, 68, 1) 20.37%,
-      rgba(244, 160, 68, 1) 20.37%,
-      rgba(251, 197, 49, 1) 80.37%
-    );
+    background: linear-gradient(180deg, #000, #1e272e);
     border-color: #fff;
   }
 
