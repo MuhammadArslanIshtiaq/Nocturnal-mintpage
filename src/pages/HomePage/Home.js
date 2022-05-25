@@ -13,10 +13,10 @@ const { MerkleTree } = require("merkletreejs");
 const keccak256 = require("keccak256");
 
 // Whitelist MerkleTree
-const leafNodes = whitelistAddresses.map((addr) => keccak256(addr));
-const merkleTree = new MerkleTree(leafNodes, keccak256, { sortPairs: true });
-const rootHash = merkleTree.getRoot();
-console.log("Whitelist Merkle Tree\n", merkleTree.toString());
+// const leafNodes = whitelistAddresses.map((addr) => keccak256(addr));
+// const merkleTree = new MerkleTree(leafNodes, keccak256, { sortPairs: true });
+// const rootHash = merkleTree.getRoot();
+// console.log("Whitelist Merkle Tree\n", merkleTree.toString());
 
 function Home() {
   const dispatch = useDispatch();
@@ -27,10 +27,10 @@ function Home() {
   const [supply, setTotalSupply] = useState(0);
   const [feedback, setFeedback] = useState("");
   const [statusAlert, setStatusAlert] = useState("");
-  const [mintAmount, setMintAmount] = useState(1);
+  const [mintAmount, setMintAmount] = useState(0);
   const [displayCost, setDisplayCost] = useState(0);
   const [state, setState] = useState(1);
-  const [nftCost, setNftCost] = useState(315);
+  const [nftCost, setNftCost] = useState(0.0315);
   const [canMintWL, setCanMintWL] = useState(false);
   const [disable, setDisable] = useState(false);
   const [max, setMax] = useState(10);
