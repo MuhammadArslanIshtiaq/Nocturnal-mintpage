@@ -45,7 +45,7 @@ function Home() {
     },
     NFT_NAME: "",
     SYMBOL: "",
-    MAX_SUPPLY: 1,
+    MAX_SUPPLY: 10,
     WEI_COST: 0,
     DISPLAY_COST: 0,
     GAS_LIMIT: 0,
@@ -162,22 +162,22 @@ function Home() {
       setDisable(true);
       setDisplayCost(0.0);
       setMax(0);
-    } else if (currentState == 1) {
-      let wlCost = await contract.methods.costWL().call();
-      setDisplayCost(web3.utils.fromWei(wlCost));
-      setNftCost(web3.utils.fromWei(wlCost));
-      setStatusAlert("WHITELIST IS NOW LIVE!");
-      setFeedback("Are you Whitelisted Member?");
+      // } else if (currentState == 1) {
+      //   let wlCost = await contract.methods.costWL().call();
+      //   setDisplayCost(web3.utils.fromWei(wlCost));
+      //   setNftCost(web3.utils.fromWei(wlCost));
+      //   setStatusAlert("WHITELIST IS NOW LIVE!");
+      //   setFeedback("Are you Whitelisted Member?");
 
-      let wlMax = await contract.methods.maxMintAmountWL().call();
-      setMax(wlMax);
+      //   let wlMax = await contract.methods.maxMintAmountWL().call();
+      //   setMax(wlMax);
     } else {
       let puCost = await contract.methods.cost().call();
       setDisplayCost(web3.utils.fromWei(puCost));
       setNftCost(web3.utils.fromWei(puCost));
       setStatusAlert("Public Mint is Live");
       let puMax = await contract.methods.maxMintAmountPublic().call();
-      setMax(puMax);
+      setMax(10);
     }
   };
 
