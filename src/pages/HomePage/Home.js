@@ -35,7 +35,6 @@ function Home() {
   const [disable, setDisable] = useState(false);
   const [max, setMax] = useState(10);
   const [loading, setLoading] = useState(true);
-  const [proof, setProof] = useState([]);
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "",
     SCAN_LINK: "",
@@ -67,7 +66,7 @@ function Home() {
     setLoading(true);
     // setDisable(true);
     blockchain.smartContract.methods
-      .mint(mintAmount, proof)
+      .mint(mintAmount)
       .send({
         gasLimit: String(totalGasLimit),
         to: CONFIG.CONTRACT_ADDRESS,
@@ -128,29 +127,6 @@ function Home() {
         .currentState()
         .call();
       setState(currentState);
-      if (currentState == 1) {
-        const claimingAddress = keccak256(blockchain.account);
-        // `getHexProof` returns the neighbour leaf and all parent nodes hashes that will
-        // be required to derive the Merkle Trees root hash.
-        const hexProof = merkleTree.getHexProof(claimingAddress);
-        setProof(hexProof);
-        let mintWL = merkleTree.verify(hexProof, claimingAddress, rootHash);
-        console.log({ mintWL });
-        let mintWLContractMethod = await blockchain.smartContract.methods
-          .isWhitelisted(blockchain.account, hexProof)
-          .call();
-        if (mintWLContractMethod && mintWL) {
-          setCanMintWL(mintWL);
-          console.log(mintWL);
-          setFeedback(`Welcome Whitelist Member, you can mint up to 2 NFTs`);
-          setDisable(false);
-        } else {
-          setFeedback(`Sorry, your wallet is not on the whitelist`);
-          setDisable(true);
-        }
-      } else {
-        setFeedback(`Welcome, you can mint up to 5 NFTs per transaction`);
-      }
     }
   };
 
