@@ -1,13 +1,12 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { connectWallet } from "../../redux/blockchain/blockchainActions";
 import { fetchData } from "./../../redux/data/dataActions";
 import * as s from "./../../styles/globalStyles";
 import whitelistAddresses from "../walletAddresses";
 import Loader from "../../components/Loader/loader";
-import { NavLogo } from "../../components/Navbar/Navbar.element";
 
-const { createAlchemyWeb3, ethers } = require("@alch/alchemy-web3");
+const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 var Web3 = require("web3");
 var Contract = require("web3-eth-contract");
 const { MerkleTree } = require("merkletreejs");
@@ -30,11 +29,11 @@ function Home() {
   const [statusAlert, setStatusAlert] = useState("");
   const [mintAmount, setMintAmount] = useState(1);
   const [displayCost, setDisplayCost] = useState(0);
-  const [state, setState] = useState(-1);
-  const [nftCost, setNftCost] = useState(-1);
+  const [state, setState] = useState(1);
+  const [nftCost, setNftCost] = useState(315);
   const [canMintWL, setCanMintWL] = useState(false);
   const [disable, setDisable] = useState(false);
-  const [max, setMax] = useState(0);
+  const [max, setMax] = useState(10);
   const [loading, setLoading] = useState(true);
   const [proof, setProof] = useState([]);
   const [CONFIG, SET_CONFIG] = useState({
@@ -100,7 +99,7 @@ function Home() {
   const decrementMintAmount = () => {
     let newMintAmount = mintAmount - 1;
     if (newMintAmount < 1) {
-      newMintAmount = 1;
+      newMintAmount = 0;
     }
     setMintAmount(newMintAmount);
     setDisplayCost(parseFloat(nftCost * newMintAmount).toFixed(2));
@@ -115,7 +114,6 @@ function Home() {
 
   const maxNfts = () => {
     setMintAmount(max);
-
     setDisplayCost(parseFloat(nftCost * max).toFixed(2));
   };
 
